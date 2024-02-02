@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+}
+
+.link {
+  cursor: pointer;
+  width: auto;
+  height: 23px;
+  margin: 0 14px 6px 0;
+}
+
+.iconContainer {
+  width: 106%;
+  height: 5px;
+  margin-top: 2px;
+  background-image: url('@/assets/images/line.svg');
+}

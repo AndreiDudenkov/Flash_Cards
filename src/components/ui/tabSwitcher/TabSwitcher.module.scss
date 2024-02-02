@@ -1,0 +1,59 @@
+button {
+  all: unset;
+}
+
+.button {
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.tabsList {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tabTrigger {
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 24px;
+
+  color: var(--color-light-100);
+
+  border: 1px solid var(--color-dark-300);
+  border-radius: 2px;
+
+  &[data-state='active'] {
+    background-color: var(--color-accent-500);
+  }
+}
+
+.tabTrigger:not(:disabled):hover {
+  color: var(--color-light-900);
+  background-color: var(--color-dark-300);
+  border: 1px solid var(--color-dark-100);
+}
+
+.tabTrigger:not(:disabled):focus-visible {
+  color: var(--color-light-100);
+  background-color: var(--color-dark-700);
+  border: 2px solid var(--color-info-900);
+}
+
+.tabTrigger:not(:disabled):active {
+  color: var(--color-light-100);
+  background-color: var(--color-accent-500);
+  border: 1px solid var(--color-accent-500);
+}
+
+.disabledTrigger {
+  cursor: default;
+  color: var(--color-dark-300);
+  background-color: var(--color-dark-700);
+  border: 1px solid var(--color-dark-300);
+}
