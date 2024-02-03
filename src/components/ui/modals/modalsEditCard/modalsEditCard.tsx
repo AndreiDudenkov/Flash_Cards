@@ -23,7 +23,6 @@ export const ModalsEditCard = (props: EditCard) => {
   const inputRefQuestion = useRef<HTMLInputElement>(null)
   const inputRefAnswer = useRef<HTMLInputElement>(null)
 
-  console.log(card.question)
   const selectFileHandlerQuestion = () => {
     inputRefQuestion && inputRefQuestion.current?.click()
   }
@@ -93,9 +92,11 @@ export const ModalsEditCard = (props: EditCard) => {
           />
         </div>
       ) : (
-        <div>
-          <img alt={'Question Photo'} className={s.photo} src={card.questionImg} />
-        </div>
+        card.questionImg !== null && (
+          <div>
+            <img alt={'Question Photo'} className={s.photo} src={card.questionImg} />
+          </div>
+        )
       )}
       <ChangeCoverButton
         inputRef={inputRefQuestion}
@@ -111,9 +112,11 @@ export const ModalsEditCard = (props: EditCard) => {
           <img alt={'Answer Photo'} className={s.photo} src={URL.createObjectURL(answerPhoto)} />
         </div>
       ) : (
-        <div>
-          <img alt={'Answer Photo'} className={s.photo} src={card.answerImg} />
-        </div>
+        card.answerImg !== null && (
+          <div>
+            <img alt={'Answer Photo'} className={s.photo} src={card.answerImg} />
+          </div>
+        )
       )}
       <ChangeCoverButton
         inputRef={inputRefAnswer}
